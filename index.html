@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note App</title>
+    <script type="module" src="./src/script/home.js"></script>
 </head>
 <body>
     <header-app></header-app>
 
-    <script type="module" src="src/index.js"></script>
+    <main>
+        <section id="note-form" class="input-form">
+            <form id="is-form" class="form-body">
+                <button class="btn" id="btn-create">Create</button>
+            </form>
+        </section>
+
+        <section class="note-wrapper" id="note-wrapper">
+            <h2>Note List</h2>
+            <div id="note-list"></div>
+        </section>
+    </main>
 </body>
 </html>
