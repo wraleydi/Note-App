@@ -7,7 +7,6 @@ class HeaderApp extends HTMLElement {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 10px;
                 background-color: #f8f8f8;
                 border-bottom: 1px solid #ddd;
             }
@@ -37,7 +36,7 @@ class HeaderApp extends HTMLElement {
                     <h1>My Note</h1>
                 </div>
                 <div class="profile-img">
-                    <img src="path/to/profile-image.jpg" alt="Profile Image" />
+                    <img src="assets/luffy.jpg" alt="Profile Image" />
                 </div>
             </header>
         `;

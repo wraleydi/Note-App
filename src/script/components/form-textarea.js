@@ -24,8 +24,8 @@ class FormTextarea extends HTMLElement {
             id="${this['_input-name']}" 
             placeholder="${this['_placeholder']}" 
             minlength="${this['_min']}"
-            required>
-            </textarea>
+            required
+            ></textarea>
         `;
     }
 }

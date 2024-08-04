@@ -49,7 +49,7 @@ class NoteItem extends HTMLElement {
                 <div class="body">
                     <p>${this._body}</p>
                 </div>
-                <small>${new Date(this._createdAt).toLocaleString()}</small>
+                <button-delete></button-delete>
             </div>
         `;
     }
