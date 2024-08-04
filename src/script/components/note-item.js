@@ -1,6 +1,11 @@
 class NoteItem extends HTMLElement {
     static get observedAttributes() {
-        return ["id", "title", "body", "createdAt", "archived"];
+        return ['id',
+                'title', 
+                'body', 
+                'createdAt', 
+                'archived'
+            ];
     }
 
     constructor() {

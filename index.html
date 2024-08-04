@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note App</title>
-    <script type="module" src="./src/script/home.js"></script>
     <script type="module" src="./src/script/components/index.js"></script>
 </head>
 <body>
@@ -13,7 +12,23 @@
     <main>
         <section id="note-form" class="input-form">
             <form id="is-form" class="form-body">
-                <button class="btn" id="btn-create">Create</button>
+                <div class="input-note">
+                    <form-input 
+                    input-name="title"
+                    label="Judul"
+                    min="3"
+                    placeholder="Masukkan Judul"
+                    ></form-input>
+                    <form-textarea
+                    input-name="body"
+                    label="Isi Catatan"
+                    min="3"
+                    placeholder="Masukkan Catatan"
+                    ></form-textarea>
+                </div>
+                <div class="submit-btn">
+                    <button class="btn" id="btn-create">Create</button>
+                </div>
             </form>
         </section>
 
@@ -22,5 +37,6 @@
             <div id="notes-container"></div>
         </section>
     </main>
+    <script type="module" src="./src/script/home.js"></script>
 </body>
 </html>
