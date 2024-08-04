@@ -7,9 +7,28 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #272048;
+}
+
+header-app header {
+    margin: 0.5rem 1rem;
+    margin-block-start: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    background-color: #534c82;
     color: white;
 }
 
-header .title {
-    color: red;
+main {
+    max-width: 1200px;
+}
+
+form-input {
+    display: block;
+    width: 1000px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    color: white;
 }
