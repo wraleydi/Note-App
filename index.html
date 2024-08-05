@@ -39,5 +39,27 @@
             <div id="notes-container"></div>
         </section>
     </main>
+    <script>
+    
+    const colors = ['#dabbfa', '#d7f8f2', '#fff6e2', '#f8d7d7'];
+
+function getColorBasedOnIndex(index) {
+    return colors[index % colors.length];
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const noteItems = document.querySelectorAll('note-item');
+
+    noteItems.forEach((item, index) => {
+        const notesElement = item.querySelector('.notes');
+        if (notesElement) {
+            notesElement.style.backgroundColor = getColorBasedOnIndex(index);
+        } else {
+            console.warn('Element with class "notes" not found inside', item);
+        }
+    });
+});
+
+</script>
 </body>
 </html>

@@ -31,7 +31,7 @@ main {
     align-items: center;
     text-align: center;
     margin-inline: auto;
-    margin-block-start: 3rem;
+    margin-block: 5rem 8rem;
     color: white;
     max-width: 800px;
     width: 100%;
@@ -83,4 +83,34 @@ main {
 .submit-btn button:hover {
     background-color: transparent;
     border: 2px solid #6e6ec6;
+}
+
+#notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+}
+
+#notes-container .notes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #b9a8f6;
+    color: black;
+    text-align: center;
+}
+
+.title h2 {
+    margin: 0;
+}
+
+.note-wrapper h2 {
+    text-align: center;
 }

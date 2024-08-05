@@ -10,7 +10,6 @@ class NoteItem extends HTMLElement {
 
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
         this._id = '';
         this._title = '';
         this._body = '';
@@ -30,18 +29,7 @@ class NoteItem extends HTMLElement {
     }
 
     render() {
-        this.shadowRoot.innerHTML = `
-            <style>
-                .notes {
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    margin: 10px 0;
-                    border-radius: 5px;
-                }
-                .title h2 {
-                    margin: 0;
-                }
-            </style>
+        this.innerHTML = `
             <div class="notes">
                 <div class="title">
                     <h2>${this._title}</h2>
@@ -54,5 +42,20 @@ class NoteItem extends HTMLElement {
         `;
     }
 }
+
+const colors = ['#dabbfa', '#d7f8f2', '#fff6e2', '#f8d7d7'];
+
+    function getRandomColor() {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const noteItems = document.querySelectorAll('note-item');
+
+        noteItems.forEach((item) => {
+            item.querySelector('.notes').style.backgroundColor = getRandomColor();
+        });
+    });
 
 customElements.define("note-item", NoteItem);
