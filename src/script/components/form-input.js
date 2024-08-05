@@ -19,14 +19,16 @@ class FormInput extends HTMLElement {
 
     render() {
         this.innerHTML = `
+        <div class="form-group">
             <label for="${this['_input-name']}">${this['_label']}</label>
             <input 
-            type="text" 
-            id="${this['_input-name']}" 
-            placeholder="${this['_placeholder']}" 
-            minlength="${this['_min']}"
-            required
+                type="text" 
+                id="${this['_input-name']}" 
+                placeholder="${this['_placeholder']}" 
+                minlength="${this['_min']}"
+                required
             />
+        </div>
         `;
     }
 }

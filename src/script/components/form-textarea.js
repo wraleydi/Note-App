@@ -19,6 +19,7 @@ class FormTextarea extends HTMLElement {
 
     render() {
         this.innerHTML = `
+        <div class="form-group">
             <label for="${this['_input-name']}">${this['_label']}</label>
             <textarea 
             id="${this['_input-name']}" 
@@ -26,6 +27,7 @@ class FormTextarea extends HTMLElement {
             minlength="${this['_min']}"
             required
             ></textarea>
+        </div>
         `;
     }
 }

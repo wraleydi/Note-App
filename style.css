@@ -21,14 +21,66 @@ header-app header {
 
 main {
     max-width: 1200px;
-}
-
-form-input {
-    display: block;
-    width: 1000px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-inline: auto;
     color: white;
+}
+
+.form-body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+    margin-block-start: 3rem;
+    color: white;
+    max-width: 800px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-block-end: 3rem;
+}
+
+.form-group label {
+    font-size: 1.8rem;
+    margin-block-end: 1rem;
+}
+
+.form-group input {
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #534c82;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+}
+
+.form-group textarea {
+    font-size: 1rem;
+    padding: 1rem;
+    height: 100px;
+    background-color: #534c82;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+}
+
+.submit-btn button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #6e6ec6;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    transition: ease-in-out 0.5s;
+    box-shadow: 0 0 20px #534c82;
+}
+
+.submit-btn button:hover {
+    background-color: transparent;
+    border: 2px solid #6e6ec6;
 }
