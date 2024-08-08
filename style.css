@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #272048;
+    font-family: Sedan, 'Sans-Serif';
 }
 
 header-app header {
@@ -73,7 +74,7 @@ main {
     padding: 0.6rem;
     background-color: #6e6ec6;
     border: 2px solid transparent;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     font-size: 1rem;
     color: white;
     transition: ease-in-out 0.5s;
@@ -99,18 +100,39 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding: 10px;
+    padding: 1.5rem;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 2rem;
+    border: 2px solid transparent;
     background-color: #b9a8f6;
-    color: black;
-    text-align: center;
+    color: #272048;
+    transition: ease-in-out 0.5s;
+}
+
+#notes-container .notes:hover{
+  background: transparent;
+  border: 2px solid #b9a8f6;
+  color: #b9a8f6;
+  box-shadow: 0 0 10px #b9a8f6;
 }
 
 .title h2 {
     margin: 0;
 }
 
-.note-wrapper h2 {
-    text-align: center;
+.section-title {
+  font-size: 3rem;
+  text-align: center;
 }
+
+input {
+  font-family: Quicksand;
+}
+
+textarea {
+  font-family: Quicksand;
+}
+
+label h2{
+  margin-block-end: 0;
+    }
