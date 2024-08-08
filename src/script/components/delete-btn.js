@@ -17,7 +17,7 @@ class ButtonDelete extends HTMLElement {
                     border-color: #d43f3a;
                     width:100%;
                     padding: 6px;
-                    border-radius: 4px;
+                    border-radius: 0.8rem;
                     border: none;
                     cursor: pointer;
                 }
