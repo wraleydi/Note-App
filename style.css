@@ -80,6 +80,7 @@ main {
     transition: ease-in-out 0.5s;
     box-shadow: 0 0 20px #534c82;
     cursor: pointer;
+    margin-block-start: 2rem;
 }
 
 .submit-btn button:hover {
@@ -149,5 +150,21 @@ label h2{
 
 footer {
     color: white;
+}
+
+.error-message-input {
+    position: absolute;
+    left: 3rem;
+    bottom: 16.5rem;
+    font-size: 1rem;
+    color: rgb(231, 64, 64);
+}
+
+.error-message-textarea {
+    position: absolute;
+    left: 3rem;
+    bottom: 1rem;
+    font-size: 1rem;
+    color: rgb(231, 64, 64);
 }
 

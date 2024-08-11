@@ -15,6 +15,8 @@ class FormTextarea extends HTMLElement {
 
     connectedCallback() {
         this.render();
+
+        this.validationHandler();
     }
 
     render() {
@@ -27,9 +29,32 @@ class FormTextarea extends HTMLElement {
             minlength="${this['_min']}"
             required
             ></textarea>
+            <small class="error-message-textarea" style="display:none;"></small>
         </div>
         `;
     }
+
+    validationHandler() {
+        const textAreaElement = this.querySelector('textarea');
+        const errorMessage = this.querySelector('.error-message-textarea');
+
+        const customValidate = () => {
+            textAreaElement.setCustomValidity('');
+
+            if (textAreaElement.validity.valueMissing) {
+                textAreaElement.setCustomValidity('*Harap isi catatan');
+            } else if (textAreaElement.validity.tooShort) {
+                textAreaElement.setCustomValidity(`*Minimal panjang ${this['_min']} karakter`);
+            }
+
+            errorMessage.textContent = textAreaElement.validationMessage;
+            errorMessage.style.display = textAreaElement.validationMessage ? 'block' : 'none';
+        };
+
+        textAreaElement.addEventListener('input', customValidate);
+        textAreaElement.addEventListener('blur', customValidate);
+    }
+    
 }
 
 customElements.define('form-textarea', FormTextarea);
