@@ -79,6 +79,7 @@ main {
     color: white;
     transition: ease-in-out 0.5s;
     box-shadow: 0 0 20px #534c82;
+    cursor: pointer;
 }
 
 .submit-btn button:hover {
@@ -106,6 +107,7 @@ main {
     background-color: #b9a8f6;
     color: #272048;
     transition: ease-in-out 0.5s;
+    cursor: pointer;
 }
 
 #notes-container .notes:hover{
@@ -135,5 +137,17 @@ textarea {
 label h2{
     font-size: 2.5rem;
     margin-block-end: 0;
+}
+
+.my-footer {
+    display: grid;
+    justify-content: center;
+    background-color: #534c82;
+    padding: 1.5rem;
+    margin-block-start: 8rem;
+}
+
+footer {
+    color: white;
 }
 

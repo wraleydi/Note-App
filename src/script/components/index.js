@@ -3,3 +3,4 @@ import './note-item.js';
 import './form-input.js';
 import './form-textarea.js'
 import './delete-btn.js'
+import './footer.js'

@@ -43,19 +43,4 @@ class NoteItem extends HTMLElement {
     }
 }
 
-const colors = ['#dabbfa', '#d7f8f2', '#fff6e2', '#f8d7d7'];
-
-    function getRandomColor() {
-        const randomIndex = Math.floor(Math.random() * colors.length);
-        return colors[randomIndex];
-    }
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const noteItems = document.querySelectorAll('note-item');
-
-        noteItems.forEach((item) => {
-            item.querySelector('.notes').style.backgroundColor = getRandomColor();
-        });
-    });
-
 customElements.define("note-item", NoteItem);
