@@ -6,9 +6,15 @@
     <title>Note App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/icon-note.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sedan:ital@0;1&display=swap');
+    </style>
     <script type="module" src="./src/script/components/index.js"></script>
     <script type="module" src="./src/script/home.js"></script>
-</head>
+</head>                                                     
 <body>
     <header-app></header-app>
 
@@ -35,31 +41,9 @@
         </section>
 
         <section class="note-wrapper" id="note-wrapper">
-            <h2>Note List</h2>
+            <h2 class="section-title">Note List</h2>
             <div id="notes-container"></div>
         </section>
     </main>
-    <script>
-    
-    const colors = ['#dabbfa', '#d7f8f2', '#fff6e2', '#f8d7d7'];
-
-function getColorBasedOnIndex(index) {
-    return colors[index % colors.length];
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const noteItems = document.querySelectorAll('note-item');
-
-    noteItems.forEach((item, index) => {
-        const notesElement = item.querySelector('.notes');
-        if (notesElement) {
-            notesElement.style.backgroundColor = getColorBasedOnIndex(index);
-        } else {
-            console.warn('Element with class "notes" not found inside', item);
-        }
-    });
-});
-
-</script>
 </body>
 </html>

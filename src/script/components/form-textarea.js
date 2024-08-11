@@ -20,7 +20,7 @@ class FormTextarea extends HTMLElement {
     render() {
         this.innerHTML = `
         <div class="form-group">
-            <label for="${this['_input-name']}">${this['_label']}</label>
+            <label for="${this['_input-name']}"><h2>${this['_label']}</h2></label>
             <textarea 
             id="${this['_input-name']}" 
             placeholder="${this['_placeholder']}" 
