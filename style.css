@@ -26,6 +26,10 @@ main {
     color: white;
 }
 
+.input-form {
+    padding: 2rem;
+}
+
 .form-body {
     display: grid;
     max-width: 1000px;
@@ -86,6 +90,10 @@ main {
 .submit-btn button:hover {
     background-color: transparent;
     border: 2px solid #6e6ec6;
+}
+
+.note-wrapper {
+    padding: 2rem;
 }
 
 #notes-container {
@@ -153,17 +161,15 @@ footer {
 }
 
 .error-message-input {
-    position: absolute;
-    left: 3rem;
-    bottom: 16.5rem;
+    text-align: start;
+    margin: 0.5rem 1rem;
     font-size: 1rem;
     color: rgb(231, 64, 64);
 }
 
 .error-message-textarea {
-    position: absolute;
-    left: 3rem;
-    bottom: 1rem;
+    text-align: start;
+    margin: 0.5rem 1rem;
     font-size: 1rem;
     color: rgb(231, 64, 64);
 }
