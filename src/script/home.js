@@ -1,4 +1,3 @@
-import './components/index.js';
 import { notesData } from '../data.js';
 
 document.addEventListener('DOMContentLoaded', () => {

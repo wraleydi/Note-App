@@ -36,7 +36,7 @@ class HeaderApp extends HTMLElement {
                     <h1>My Note</h1>
                 </div>
                 <div class="profile-img">
-                    <img src="assets/luffy.jpg" alt="Profile Image" />
+                    <img src="luffy.jpg" alt="Profile Image" />
                 </div>
             </header>
         `;
