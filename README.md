@@ -2,7 +2,7 @@
 
 Membuat aplikasi Note App dengan web component.
 
-#API
+# API
 
 silahkan ganti branch untuk melihat Note App yang menggunakan API
 
