@@ -1,24 +1,29 @@
 import { notesData } from '../data.js';
 
 const BASE_URL = 'https://notes-api.dicoding.dev/v2';
-
 const container = document.getElementById('notes-container');
 
-fetch(`${BASE_URL}/notes`)
-.then(async(response) => {
-    const { data } = await response.json();
-    data.forEach(note => {
-        const noteElement = document.createElement('note-item');
-        noteElement.setAttribute('id', note.id);
-        noteElement.setAttribute('title', note.title);
-        noteElement.setAttribute('body', note.body);
-        noteElement.setAttribute('createdAt', note.createdAt);
-        noteElement.setAttribute('archived', note.archived);
-        container.appendChild(noteElement);
-    });
-});
+const getNotes = async () => {
+    try {
+        const response = await fetch(`${BASE_URL}/notes`);
+        const { data } = await response.json();
+        data.forEach(note => displayNotes(note));
+    } catch (error) {
+        responseMessage('Gagal memuat catatan. Cek koneksi internet Anda.');
+    }
+};
 
-const createBook = async (note) => {
+const displayNotes = (note) => {
+    const noteElement = document.createElement('note-item');
+    noteElement.setAttribute('id', note.id);
+    noteElement.setAttribute('title', note.title);
+    noteElement.setAttribute('body', note.body);
+    noteElement.setAttribute('createdAt', note.createdAt);
+    noteElement.setAttribute('archived', note.archived);
+    container.appendChild(noteElement);
+};
+
+const createNote = async (note) => {
     try {
         const options = {
             method: 'POST',
@@ -31,33 +36,36 @@ const createBook = async (note) => {
         const response = await fetch(`${BASE_URL}/notes`, options);
         
         if (!response.ok) {
-            // Jika status response bukan 200-299
             throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
 
         const responseJson = await response.json();
         responseMessage(responseJson.message);
+
+        displayNotes(responseJson.data);
     } catch (error) {
         responseMessage(error.message || 'Terjadi kesalahan. Cek koneksi internet Anda.');
     }
 };
 
-
 const responseMessage = (message = 'cek internet Anda') => {
     alert(message);
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     const inputTitleNote = document.querySelector('#title');
     const inputBodyNote = document.querySelector('#body');
-    const buttonCreate = document.querySelector('#btn-create');
+    const formCreate = document.querySelector('#is-form');
 
-    buttonCreate.addEventListener('click', function(){
+    formCreate.addEventListener('submit', function(event){
+        event.preventDefault(); 
         const note = {
             title: inputTitleNote.value,
             body: inputBodyNote.value
         };
 
-        createBook(note)
+        createNote(note);
     });
+
+    getNotes();
 });
