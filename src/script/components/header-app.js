@@ -1,8 +1,8 @@
 class HeaderApp extends HTMLElement {
-    constructor() {
-        super();
-        this._style = document.createElement('style');
-        this._style.textContent = `
+  constructor() {
+    super()
+    this._style = document.createElement('style')
+    this._style.textContent = `
             header {
                 display: flex;
                 justify-content: space-between;
@@ -19,18 +19,18 @@ class HeaderApp extends HTMLElement {
                 height: 40px;
                 border-radius: 50%;
             }
-        `;
-    }
+        `
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render()
+  }
 
-    render() {
-        this.emptyContent();
-        this.appendChild(this._style);
+  render() {
+    this.emptyContent()
+    this.appendChild(this._style)
 
-        this.innerHTML += `
+    this.innerHTML += `
             <header>
                 <div class="title">
                     <h1>My Note</h1>
@@ -39,12 +39,12 @@ class HeaderApp extends HTMLElement {
                     <img src="luffy.jpg" alt="Profile Image" />
                 </div>
             </header>
-        `;
-    }
+        `
+  }
 
-    emptyContent() {
-        this.innerHTML = '';
-    }
+  emptyContent() {
+    this.innerHTML = ''
+  }
 }
 
-customElements.define('header-app', HeaderApp);
+customElements.define('header-app', HeaderApp)

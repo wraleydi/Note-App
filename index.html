@@ -1,52 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Note App</title>
-    <link rel="icon" href="icon-note.png">
+    <link rel="icon" href="icon-note.png" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
     </style>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sedan:ital@0;1&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sedan:ital@0;1&display=swap');
     </style>
-</head>                                                     
-<body>
+  </head>
+  <body>
     <header-app></header-app>
 
     <main>
-        <section id="note-form" class="input-form">
-            <div id="overlay"></div>
-            <div id="loading">
-                <div class="spinner"></div>
-                <div class="text-loading">Loading...</div>
-            </div>
-            <form id="is-form" class="form-body">
-                    <form-input 
-                    input-name="title"
-                    label="Judul"
-                    min="3"
-                    placeholder="Masukkan Judul"
-                    ></form-input>
-                    <form-textarea
-                    input-name="body"
-                    label="Isi Catatan"
-                    min="5"
-                    placeholder="Masukkan Catatan"
-                    ></form-textarea>
-                </div>
-                <div class="submit-btn">
-                    <button type="submit" class="btn" id="btn-create">Create</button>
-                </div>
-            </form>
-        </section>
+      <section id="note-form" class="input-form">
+        <div id="overlay"></div>
+        <div id="loading">
+          <div class="spinner"></div>
+          <div class="text-loading">Loading...</div>
+        </div>
+        <form id="is-form" class="form-body">
+          <form-input
+            input-name="title"
+            label="Judul"
+            min="3"
+            placeholder="Masukkan Judul"
+          ></form-input>
+          <form-textarea
+            input-name="body"
+            label="Isi Catatan"
+            min="5"
+            placeholder="Masukkan Catatan"
+          ></form-textarea>
+          <div class="submit-btn">
+            <button type="submit" class="btn" id="btn-create">Create</button>
+          </div>
+        </form>
+      </section>
 
-        <section class="note-wrapper" id="note-wrapper">
-            <h2 class="section-title">Note List</h2>
-            <div id="notes-container"></div>
-        </section>
+      <section class="note-wrapper" id="note-wrapper">
+        <h2 class="section-title">Note List</h2>
+        <div id="notes-container"></div>
+      </section>
     </main>
-    <custom-footer text="&#169; Bandar Lampung, With By Raleydi Wardhana, All rights reserved"></custom-footer>
-</body>
+    <custom-footer
+      text="&#169; Bandar Lampung, With By Raleydi Wardhana, All rights reserved"
+    ></custom-footer>
+  </body>
 </html>

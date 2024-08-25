@@ -1,19 +1,19 @@
-import { deleteNoteApi, responseMessage } from "../../remote/note-api";
-import { getNotes } from "../view/notes";
+import { deleteNoteApi, responseMessage } from '../../remote/note-api'
+import { getNotes } from '../view/notes'
 
 class ButtonDelete extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({mode: 'open'});
-        this._id = this.getAttribute('id');
-    }
+  constructor() {
+    super()
+    this._shadowRoot = this.attachShadow({ mode: 'open' })
+    this._id = this.getAttribute('id')
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render()
+  }
 
-    render() {
-        this._shadowRoot.innerHTML = `
+  render() {
+    this._shadowRoot.innerHTML = `
         <style>
                 button {
                     color: #fff;
@@ -27,18 +27,20 @@ class ButtonDelete extends HTMLElement {
                 }
         </style>
         <button id="btn-del">Delete</button>
-        `;
+        `
 
-        this._shadowRoot.getElementById('btn-del').addEventListener('click', async () => {
-            try {
-                const response = await deleteNoteApi(this.id);
-                responseMessage(response.message);
-                getNotes();
-            } catch(error) {
-                responseMessage(err.message);
-            }
-        });
-    }
+    this._shadowRoot
+      .getElementById('btn-del')
+      .addEventListener('click', async () => {
+        try {
+          const response = await deleteNoteApi(this.id)
+          responseMessage(response.message)
+          getNotes()
+        } catch (error) {
+          responseMessage(err.message)
+        }
+      })
+  }
 }
 
-customElements.define('button-delete', ButtonDelete);
+customElements.define('button-delete', ButtonDelete)

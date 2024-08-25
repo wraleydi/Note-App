@@ -1,218 +1,215 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #272048;
-    font-family: Sedan, 'Sans-Serif';
+  margin: 0;
+  padding: 0;
+  background-color: #272048;
+  font-family: Sedan, 'Sans-Serif';
 }
 
 header-app header {
-    margin: 0.5rem 1rem;
-    margin-block-start: 2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 3rem;
-    background-color: #534c82;
-    color: white;
+  margin: 0.5rem 1rem;
+  margin-block-start: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  background-color: #534c82;
+  color: white;
 }
 
 main {
-    max-width: 1200px;
-    margin-inline: auto;
-    color: white;
+  max-width: 1200px;
+  margin-inline: auto;
+  color: white;
 }
 
 .input-form {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .form-body {
-    display: grid;
-    max-width: 1000px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-inline: auto;
-    margin-block: 5rem 8rem;
-    color: white;
-    grid-template-columns: 1fr;
+  display: grid;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+  margin-block: 5rem 8rem;
+  color: white;
+  grid-template-columns: 1fr;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-block-end: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-block-end: 3rem;
 }
 
 .form-group label {
-    font-size: 1.8rem;
-    margin-block-end: 1rem;
+  font-size: 1.8rem;
+  margin-block-end: 1rem;
 }
 
 .form-group input {
-    font-size: 1rem;
-    padding: 1rem;
-    background-color: #534c82;
-    color: white;
-    border: none;
-    border-radius: 1rem;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #534c82;
+  color: white;
+  border: none;
+  border-radius: 1rem;
 }
 
 .form-group textarea {
-    font-size: 1rem;
-    padding: 1rem;
-    height: 100px;
-    background-color: #534c82;
-    color: white;
-    border: none;
-    border-radius: 1rem;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 100px;
+  background-color: #534c82;
+  color: white;
+  border: none;
+  border-radius: 1rem;
 }
 
 .submit-btn button {
-    width: 100%;
-    padding: 0.6rem;
-    background-color: #6e6ec6;
-    border: 2px solid transparent;
-    border-radius: 0.8rem;
-    font-size: 1rem;
-    color: white;
-    transition: ease-in-out 0.5s;
-    box-shadow: 0 0 20px #534c82;
-    cursor: pointer;
-    margin-block-start: 2rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #6e6ec6;
+  border: 2px solid transparent;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  color: white;
+  transition: ease-in-out 0.5s;
+  box-shadow: 0 0 20px #534c82;
+  cursor: pointer;
+  margin-block-start: 2rem;
 }
 
 .submit-btn button:hover {
-    background-color: transparent;
-    border: 2px solid #6e6ec6;
+  background-color: transparent;
+  border: 2px solid #6e6ec6;
 }
 
 .note-wrapper {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 #notes-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1100px;
-    margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin-inline: auto;
 }
 
-#notes-container .notes{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 1.5rem;
-    margin: 10px 0;
-    border-radius: 2rem;
-    background-color: #b9a8f6;
-    color: #272048;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
+#notes-container .notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.5rem;
+  margin: 10px 0;
+  border-radius: 2rem;
+  background-color: #b9a8f6;
+  color: #272048;
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
 }
 
-#notes-container .notes:hover{
-    background: transparent;
-    color: #b9a8f6;
-    box-shadow: 0 0 10px #b9a8f6;
+#notes-container .notes:hover {
+  background: transparent;
+  color: #b9a8f6;
+  box-shadow: 0 0 10px #b9a8f6;
 }
 
 .title h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .section-title {
-    font-size: 3rem;
-    text-align: center;
+  font-size: 3rem;
+  text-align: center;
 }
 
 input {
-    font-family: Quicksand;
+  font-family: Quicksand;
 }
 
 textarea {
-    font-family: Quicksand;
+  font-family: Quicksand;
 }
 
-label h2{
-    font-size: 2.5rem;
-    margin-block-end: 0;
+label h2 {
+  font-size: 2.5rem;
+  margin-block-end: 0;
 }
 
 .my-footer {
-    display: grid;
-    justify-content: center;
-    background-color: #534c82;
-    padding: 1.5rem;
-    margin-block-start: 8rem;
+  display: grid;
+  justify-content: center;
+  background-color: #534c82;
+  padding: 1.5rem;
+  margin-block-start: 8rem;
 }
 
 footer {
-    color: white;
+  color: white;
 }
 
 .error-message-input {
-    text-align: start;
-    margin: 0.5rem 1rem;
-    font-size: 1rem;
-    color: rgb(231, 64, 64);
+  text-align: start;
+  margin: 0.5rem 1rem;
+  font-size: 1rem;
+  color: rgb(231, 64, 64);
 }
 
 .error-message-textarea {
-    text-align: start;
-    margin: 0.5rem 1rem;
-    font-size: 1rem;
-    color: rgb(231, 64, 64);
+  text-align: start;
+  margin: 0.5rem 1rem;
+  font-size: 1rem;
+  color: rgb(231, 64, 64);
 }
 
 #overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.616); 
-    z-index: -0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.616);
+  z-index: -0;
 }
 
 #loading {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: #918d8d;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #918d8d;
 }
 
 .spinner {
-    margin-inline: auto;
-    border: 6px solid rgba(0, 0, 0, 0.1);
-    width: 66px;
-    height: 66px;
-    border-radius: 50%;
-    border-left-color: #09f;
-    animation: spin 1s ease-out infinite;
+  margin-inline: auto;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s ease-out infinite;
 }
 
 .text-loading {
-margin-block-start: 1rem;
+  margin-block-start: 1rem;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
