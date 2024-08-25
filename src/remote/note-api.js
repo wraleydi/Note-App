@@ -62,6 +62,22 @@ const archivedNoteApi = async (note_id) => {
   }
 }
 
+const unArchivedApi = async (note_id) => {
+  try {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+
+    const response = await fetch(`${BASE_URL}/notes/${note_id}/unarchive`, options)
+    return await response.json()
+  } catch(error) {
+    responseMessage('gagal memuat, cek internet anda')
+  }
+}
+
 const responseMessage = (message = 'cek internet Anda') => {
   alert(message)
 }
@@ -72,4 +88,5 @@ export {
   deleteNoteApi,
   archivedNoteApi,
   responseMessage,
+  unArchivedApi,
 }
