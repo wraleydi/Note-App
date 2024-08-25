@@ -3,11 +3,11 @@ const BASE_URL = 'https://notes-api.dicoding.dev/v2'
 const getNotesApi = async () => {
   try {
     const response = await fetch(`${BASE_URL}/notes`)
-    return await response.json();
+    return await response.json()
   } catch (error) {
     responseMessage('gagal memuat, coba cek internet')
   }
-};
+}
 
 const createNoteApi = async (note) => {
   try {
@@ -24,11 +24,11 @@ const createNoteApi = async (note) => {
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`)
     }
-    return await response.json();
+    return await response.json()
   } catch (error) {
     responseMessage('gagal memuat, cek internet anda')
   }
-};
+}
 
 const deleteNoteApi = async (note_id) => {
   try {
@@ -40,11 +40,11 @@ const deleteNoteApi = async (note_id) => {
     }
 
     const response = await fetch(`${BASE_URL}/notes/${note_id}`, options)
-    return await response.json();
+    return await response.json()
   } catch (error) {
     responseMessage('gagal memuat, cek internet anda')
   }
-};
+}
 
 const archivedNoteApi = async (note_id) => {
   try {
@@ -55,16 +55,21 @@ const archivedNoteApi = async (note_id) => {
       },
     }
 
-    const response = await fetch(`${BASE_URL}/${note_id}/archive`);
-    return await response.json();
-  } catch(error) {
-    responseMessage('gagal memuat, cek internet anda');
+    const response = await fetch(`${BASE_URL}/${note_id}/archive`)
+    return await response.json()
+  } catch (error) {
+    responseMessage('gagal memuat, cek internet anda')
   }
-};
-
+}
 
 const responseMessage = (message = 'cek internet Anda') => {
   alert(message)
-};
+}
 
-export { getNotesApi, createNoteApi, deleteNoteApi, archivedNoteApi,  responseMessage }
+export {
+  getNotesApi,
+  createNoteApi,
+  deleteNoteApi,
+  archivedNoteApi,
+  responseMessage,
+}
