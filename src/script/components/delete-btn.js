@@ -1,7 +1,11 @@
+import { deleteNoteApi, responseMessage } from "../../remote/note-api";
+import { getNotes } from "../view/notes";
+
 class ButtonDelete extends HTMLElement {
     constructor() {
         super();
         this._shadowRoot = this.attachShadow({mode: 'open'});
+        this._id = this.getAttribute('id');
     }
 
     connectedCallback() {
@@ -24,6 +28,16 @@ class ButtonDelete extends HTMLElement {
         </style>
         <button id="btn-del">Delete</button>
         `;
+
+        this._shadowRoot.getElementById('btn-del').addEventListener('click', async () => {
+            try {
+                const response = await deleteNoteApi(this.id);
+                responseMessage(response.message);
+                getNotes();
+            } catch(error) {
+                responseMessage(err.message);
+            }
+        });
     }
 }
 

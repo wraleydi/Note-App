@@ -112,7 +112,6 @@ main {
     padding: 1.5rem;
     margin: 10px 0;
     border-radius: 2rem;
-    border: 2px solid transparent;
     background-color: #b9a8f6;
     color: #272048;
     transition: ease-in-out 0.5s;
@@ -121,7 +120,6 @@ main {
 
 #notes-container .notes:hover{
     background: transparent;
-    border: 2px solid #b9a8f6;
     color: #b9a8f6;
     box-shadow: 0 0 10px #b9a8f6;
 }
@@ -172,5 +170,49 @@ footer {
     margin: 0.5rem 1rem;
     font-size: 1rem;
     color: rgb(231, 64, 64);
+}
+
+#overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.616); 
+    z-index: -0;
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #918d8d;
+}
+
+.spinner {
+    margin-inline: auto;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s ease-out infinite;
+}
+
+.text-loading {
+margin-block-start: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 

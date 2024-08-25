@@ -30,14 +30,14 @@ class NoteItem extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <div class="notes">
+            <div class="notes" id="notes">
                 <div class="title">
                     <h2>${this._title}</h2>
                 </div>
                 <div class="body">
                     <p>${this._body}</p>
                 </div>
-                <button-delete></button-delete>
+                <button-delete id="${this.id}"></button-delete>
             </div>
         `;
     }
