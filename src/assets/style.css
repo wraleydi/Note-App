@@ -245,3 +245,21 @@ footer {
   color: white;
   background-color: #6e6ec6;
 }
+
+.btn-note {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#btn-archive {
+  color: #fff;
+                    background-color: #4f68d9;
+                    border-color: #d43f3a;
+                    width:100px;
+                    padding: 6px;
+                    border-radius: 0.8rem;
+                    border: none;
+                    cursor: pointer;
+                    margin-inline-start: 0.5rem;
+}

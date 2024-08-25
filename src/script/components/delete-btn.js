@@ -19,7 +19,7 @@ class ButtonDelete extends HTMLElement {
                     color: #fff;
                     background-color: #d9534f;
                     border-color: #d43f3a;
-                    width:100%;
+                    width:100px;
                     padding: 6px;
                     border-radius: 0.8rem;
                     border: none;

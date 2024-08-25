@@ -32,7 +32,10 @@ class NoteItem extends HTMLElement {
                 <div class="body">
                     <p>${this._body}</p>
                 </div>
+                <div class="btn-note">
                 <button-delete id="${this.id}"></button-delete>
+                <button-archive id="${this.id}"></button-archive>
+                </div>
             </div>
         `
   }
