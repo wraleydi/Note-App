@@ -55,7 +55,7 @@ const archivedNoteApi = async (note_id) => {
       },
     }
 
-    const response = await fetch(`${BASE_URL}/${note_id}/archive`)
+    const response = await fetch(`${BASE_URL}/notes/${note_id}/archive`, options)
     return await response.json()
   } catch (error) {
     responseMessage('gagal memuat, cek internet anda')
