@@ -41,12 +41,37 @@ const createNote = async (note) => {
 
         const responseJson = await response.json();
         responseMessage(responseJson.message);
-
         displayNotes(responseJson.data);
     } catch (error) {
         responseMessage(error.message || 'Terjadi kesalahan. Cek koneksi internet Anda.');
     }
 };
+
+const deleteNote = async (note_id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/notes/${note_id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const responseJson = await response.json();
+        responseMessage(responseJson.message);
+        getNotes();
+    } catch (error) {
+        responseMessage(error);
+    }
+};
+
+const buttonDelete = document.querySelectorAll('#btn-del');
+buttonDelete.forEach(button => {
+    button.addEventListener('click', event => {
+        const noteId = event.target.id;
+
+        deleteNote(noteId);
+    });
+});
 
 const responseMessage = (message = 'cek internet Anda') => {
     alert(message);

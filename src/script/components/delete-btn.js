@@ -22,7 +22,7 @@ class ButtonDelete extends HTMLElement {
                     cursor: pointer;
                 }
         </style>
-        <button>Delete</button>
+        <button id="btn-del">Delete</button>
         `;
     }
 }
