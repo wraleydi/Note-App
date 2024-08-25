@@ -213,3 +213,35 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+.note-archived {
+  display: flex;
+  justify-content: center;
+  margin-block: 3rem 8rem;
+  align-items: auto;
+}
+
+.btn-archived {
+  margin-inline-end: 3rem;
+  font-family: Sedan, sans-serif;
+}
+
+.btn-archived button {
+  padding: 0.5rem 1.5rem;
+  width: 150px;
+  border: none;
+  background-color: #6e6ec6;
+  font-size: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.btn-non-archived button {
+  padding: 0.5rem 1.5rem;
+  width: 150px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #6e6ec6;
+}
