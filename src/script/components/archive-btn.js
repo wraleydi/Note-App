@@ -6,34 +6,29 @@ class ArchiveButton extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._id = this.getAttribute('id');
-    this._archived = this.hasAttribute('archuve') && this.getAttribute('archive') === 'true'
-
+    this._archived = this.getAttribute('archived') === 'true'; // Memastikan atribut archived diambil dari elemen
   }
 
   async handleClick() {
     try {
-      if(this._archive) {
-        const response = await unArchivedApi(this._id)
-        responseMessage(response.message)
+      if (this._archived) {
+        // Jika catatan sudah diarsipkan, unarchive
+        const response = await unArchivedApi(this._id);
+        responseMessage(response.message);
       } else {
-        const response = await archivedNoteApi(this._id)
-        responseMessage(response.message)
+        // Jika catatan belum diarsipkan, archive
+        const response = await archivedNoteApi(this._id);
+        responseMessage(response.message);
       }
 
-      this._archive = !this._archive
+      // Toggle state
+      this._archived = !this._archived;
+      this.setAttribute('archived', this._archived); 
 
-      this.render()
-
-      getNotes()
-    } catch(error) {
-      responseMessage(err.message)
+      this.render(); 
+    } catch (error) {
+      responseMessage(error.message || 'Terjadi kesalahan.');
     }
-
-
-
-
-
-
   }
 
   connectedCallback() {
@@ -43,32 +38,24 @@ class ArchiveButton extends HTMLElement {
   render() {
     this._shadowRoot.innerHTML = `
     <style>
-    #btn-archive {
-  color: #fff;
-  background-color: #4f68d9;
-  border-color: #d43f3a;
-  width: 100px;
-  padding: 6px;
-  border-radius: 0.8rem;
-  border: none;
-  cursor: pointer;
-  margin-inline-start: 0.5rem;
-}
+      #btn-archive {
+        color: #fff;
+        background-color: ${this._archived ? '#4CAF50' : '#4f68d9'}; /* Warna berubah tergantung state */
+        border-color: ${this._archived ? '#4CAF50' : '#d43f3a'};
+        width: 100px;
+        padding: 6px;
+        border-radius: 0.8rem;
+        border: none;
+        cursor: pointer;
+        margin-inline-start: 0.5rem;
+      }
     </style>
-        <button id="btn-archive">${this.archive ? 'Unarchived':'Archived'}</button>
-        `;
+    <button id="btn-archive">${this._archived ? 'Unarchive' : 'Archive'}</button>
+    `;
 
     this._shadowRoot
       .getElementById('btn-archive')
-      .addEventListener('click', () => this.handleClick() 
-
-
-
-
-
-
-
-      );
+      .addEventListener('click', () => this.handleClick());
   }
 }
 

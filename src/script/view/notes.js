@@ -2,6 +2,7 @@ import {
   createNoteApi,
   getNotesApi,
   responseMessage,
+  getArchivedApi,
 } from '../../remote/note-api.js';
 
 const container = document.getElementById('notes-container');
@@ -53,4 +54,14 @@ const createNote = async (note) => {
   }
 };
 
-export { getNotes, createNote, showLoading, hideLoading };
+const getArchived = async () => {
+  try {
+    const { data } = await getArchivedApi();
+    container.innerHTML = '';
+    data.forEach((note) => displayNotes(note));
+  } catch (error) {
+    responseMessage('gagal memuat, coba cek internet anda');
+  }
+}
+
+export { getNotes, createNote, showLoading, hideLoading, getArchived };
