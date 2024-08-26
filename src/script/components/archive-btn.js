@@ -1,5 +1,5 @@
 import { archivedNoteApi, unArchivedApi, responseMessage } from '../../remote/note-api';
-import { getNotes } from '../view/notes';
+import { showLoading, hideLoading } from '../view/notes';
 
 class ArchiveButton extends HTMLElement {
   constructor() {
@@ -11,6 +11,7 @@ class ArchiveButton extends HTMLElement {
 
   async handleClick() {
     try {
+      showLoading()
       if (this._archived) {
         // Jika catatan sudah diarsipkan, unarchive
         const response = await unArchivedApi(this._id);
@@ -28,6 +29,8 @@ class ArchiveButton extends HTMLElement {
       this.render(); 
     } catch (error) {
       responseMessage(error.message || 'Terjadi kesalahan.');
+    } finally {
+      hideLoading()
     }
   }
 

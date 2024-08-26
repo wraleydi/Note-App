@@ -30,5 +30,19 @@ const nonArchived = document.querySelector('#non-archived')
 archived.addEventListener('click', function(event) {
   event.preventDefault()
 
+  showLoading()
   getArchived();
+  setTimeout(function() {
+    hideLoading()
+  }, 500)
+})
+
+nonArchived.addEventListener('click', function(event) {
+  event.preventDefault()
+
+  showLoading()
+  getNotes()
+  setTimeout(function() {
+    hideLoading()
+  }, 500)
 })
