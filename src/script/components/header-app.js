@@ -1,7 +1,7 @@
 class HeaderApp extends HTMLElement {
   constructor() {
-    super()
-    this._style = document.createElement('style')
+    super();
+    this._style = document.createElement('style');
     this._style.textContent = `
             header {
                 display: flex;
@@ -19,16 +19,16 @@ class HeaderApp extends HTMLElement {
                 height: 40px;
                 border-radius: 50%;
             }
-        `
+        `;
   }
 
   connectedCallback() {
-    this.render()
+    this.render();
   }
 
   render() {
-    this.emptyContent()
-    this.appendChild(this._style)
+    this.emptyContent();
+    this.appendChild(this._style);
 
     this.innerHTML += `
             <header>
@@ -39,12 +39,12 @@ class HeaderApp extends HTMLElement {
                     <img src="luffy.jpg" alt="Profile Image" />
                 </div>
             </header>
-        `
+        `;
   }
 
   emptyContent() {
-    this.innerHTML = ''
+    this.innerHTML = '';
   }
 }
 
-customElements.define('header-app', HeaderApp)
+customElements.define('header-app', HeaderApp);

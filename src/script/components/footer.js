@@ -1,13 +1,13 @@
 class CustomFooter extends HTMLElement {
-  static observedAttributes = ['text']
+  static observedAttributes = ['text'];
 
   constructor() {
-    super()
-    this['_text'] = this.getAttribute('text')
+    super();
+    this['_text'] = this.getAttribute('text');
   }
 
   connectedCallback() {
-    this.render()
+    this.render();
   }
 
   render() {
@@ -15,8 +15,8 @@ class CustomFooter extends HTMLElement {
         <div class="my-footer">
             <footer>${this['_text']}</footer>
         </div>
-        `
+        `;
   }
 }
 
-customElements.define('custom-footer', CustomFooter)
+customElements.define('custom-footer', CustomFooter);

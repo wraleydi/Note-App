@@ -1,25 +1,25 @@
-import { createNote, getNotes, showLoading, hideLoading } from './view/notes'
+import { createNote, getNotes, showLoading, hideLoading } from './view/notes';
 
 document.addEventListener('DOMContentLoaded', () => {
-  showLoading()
-  const inputTitleNote = document.querySelector('#title')
-  const inputBodyNote = document.querySelector('#body')
-  const formCreate = document.querySelector('#is-form')
+  showLoading();
+  const inputTitleNote = document.querySelector('#title');
+  const inputBodyNote = document.querySelector('#body');
+  const formCreate = document.querySelector('#is-form');
 
   formCreate.addEventListener('submit', function (event) {
-    event.preventDefault()
+    event.preventDefault();
     const note = {
       title: inputTitleNote.value,
       body: inputBodyNote.value,
-    }
+    };
 
-    createNote(note)
+    createNote(note);
 
-    inputTitleNote.value = ''
-    inputBodyNote.value = ''
-  })
+    inputTitleNote.value = '';
+    inputBodyNote.value = '';
+  });
 
   getNotes().finally(() => {
-    hideLoading()
-  })
-})
+    hideLoading();
+  });
+});

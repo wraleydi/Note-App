@@ -1,25 +1,25 @@
 class NoteItem extends HTMLElement {
   static get observedAttributes() {
-    return ['id', 'title', 'body', 'createdAt', 'archived']
+    return ['id', 'title', 'body', 'createdAt', 'archived'];
   }
 
   constructor() {
-    super()
-    this._id = ''
-    this._title = ''
-    this._body = ''
-    this._createdAt = ''
-    this._archived = false
+    super();
+    this._id = '';
+    this._title = '';
+    this._body = '';
+    this._createdAt = '';
+    this._archived = false;
   }
 
   connectedCallback() {
-    this.render()
+    this.render();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this[`_${name}`] = newValue
-      this.render()
+      this[`_${name}`] = newValue;
+      this.render();
     }
   }
 
@@ -37,8 +37,8 @@ class NoteItem extends HTMLElement {
                 <button-archive id="${this.id}"></button-archive>
                 </div>
             </div>
-        `
+        `;
   }
 }
 
-customElements.define('note-item', NoteItem)
+customElements.define('note-item', NoteItem);

@@ -1,15 +1,43 @@
-import { archivedNoteApi, responseMessage } from "../../remote/note-api"
-import { getNotes } from "../view/notes"
+import { archivedNoteApi, unArchivedApi, responseMessage } from '../../remote/note-api';
+import { getNotes } from '../view/notes';
 
 class ArchiveButton extends HTMLElement {
   constructor() {
-    super()
-    this._shadowRoot = this.attachShadow({ mode: 'open' })
-    this._id = this.getAttribute('id')
+    super();
+    this._shadowRoot = this.attachShadow({ mode: 'open' });
+    this._id = this.getAttribute('id');
+    this._archived = this.hasAttribute('archuve') && this.getAttribute('archive') === 'true'
+
+  }
+
+  async handleClick() {
+    try {
+      if(this._archive) {
+        const response = await unArchivedApi(this._id)
+        responseMessage(response.message)
+      } else {
+        const response = await archivedNoteApi(this._id)
+        responseMessage(response.message)
+      }
+
+      this._archive = !this._archive
+
+      this.render()
+
+      getNotes()
+    } catch(error) {
+      responseMessage(err.message)
+    }
+
+
+
+
+
+
   }
 
   connectedCallback() {
-    this.render()
+    this.render();
   }
 
   render() {
@@ -27,21 +55,21 @@ class ArchiveButton extends HTMLElement {
   margin-inline-start: 0.5rem;
 }
     </style>
-        <button id="btn-archive">Archive</button>
-        `
+        <button id="btn-archive">${this.archive ? 'Unarchived':'Archived'}</button>
+        `;
 
-        this._shadowRoot.getElementById('btn-archive').addEventListener('click',
-            async () => {
-                try {
-                const response = await archivedNoteApi(this.id)
-                responseMessage(response.message)
-                getNotes();
-            } catch(error) {
-                responseMessage(err.message)
-            }
-            }
-        )
+    this._shadowRoot
+      .getElementById('btn-archive')
+      .addEventListener('click', () => this.handleClick() 
+
+
+
+
+
+
+
+      );
   }
 }
 
-customElements.define('button-archive', ArchiveButton)
+customElements.define('button-archive', ArchiveButton);

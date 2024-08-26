@@ -104,6 +104,6 @@ export const notesData = [
     createdAt: '2022-10-28T08:00:20.120Z',
     archived: false,
   },
-]
+];
 
-console.log(notesData)
+console.log(notesData);
