@@ -1,5 +1,5 @@
 import { deleteNoteApi, responseMessage } from '../../remote/note-api';
-import { getNotes } from '../view/notes';
+import { getNotes, showLoading, hideLoading } from '../view/notes';
 
 class ButtonDelete extends HTMLElement {
   constructor() {
@@ -33,11 +33,14 @@ class ButtonDelete extends HTMLElement {
       .getElementById('btn-del')
       .addEventListener('click', async () => {
         try {
+          showLoading()
           const response = await deleteNoteApi(this.id);
           responseMessage(response.message);
           getNotes();
         } catch (error) {
           responseMessage(err.message);
+        } finally {
+          hideLoading()
         }
       });
   }

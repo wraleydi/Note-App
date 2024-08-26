@@ -6,7 +6,7 @@ class ArchiveButton extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._id = this.getAttribute('id');
-    this._archived = this.getAttribute('archived') === 'true'; // Memastikan atribut archived diambil dari elemen
+    this._archived = this.parentElement.parentElement.parentElement.getAttribute('archived') === 'true'; // Memastikan atribut archived diambil dari elemen
   }
 
   async handleClick() {
