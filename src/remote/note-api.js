@@ -86,12 +86,12 @@ const unArchivedApi = async (note_id) => {
 
 const getArchivedApi = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/notes/archived`)
-    return await response.json()
-  } catch(error) {
-    responseMessage('gagal memuat, coba cek internet')
+    const response = await fetch(`${BASE_URL}/notes/archived`);
+    return await response.json();
+  } catch (error) {
+    responseMessage('gagal memuat, coba cek internet');
   }
-}
+};
 
 const responseMessage = (message = 'cek internet Anda') => {
   alert(message);

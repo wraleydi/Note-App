@@ -33,14 +33,14 @@ class ButtonDelete extends HTMLElement {
       .getElementById('btn-del')
       .addEventListener('click', async () => {
         try {
-          showLoading()
+          showLoading();
           const response = await deleteNoteApi(this.id);
           responseMessage(response.message);
           getNotes();
         } catch (error) {
           responseMessage(err.message);
         } finally {
-          hideLoading()
+          hideLoading();
         }
       });
   }

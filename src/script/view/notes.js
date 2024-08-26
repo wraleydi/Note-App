@@ -62,6 +62,6 @@ const getArchived = async () => {
   } catch (error) {
     responseMessage('gagal memuat, coba cek internet anda');
   }
-}
+};
 
 export { getNotes, createNote, showLoading, hideLoading, getArchived };

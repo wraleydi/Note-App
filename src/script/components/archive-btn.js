@@ -1,4 +1,8 @@
-import { archivedNoteApi, unArchivedApi, responseMessage } from '../../remote/note-api';
+import {
+  archivedNoteApi,
+  unArchivedApi,
+  responseMessage,
+} from '../../remote/note-api';
 import { showLoading, hideLoading } from '../view/notes';
 
 class ArchiveButton extends HTMLElement {
@@ -6,31 +10,31 @@ class ArchiveButton extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._id = this.getAttribute('id');
-    this._archived = this.parentElement.parentElement.parentElement.getAttribute('archived') === 'true'; // Memastikan atribut archived diambil dari elemen
+    this._archived =
+      this.parentElement.parentElement.parentElement.getAttribute(
+        'archived'
+      ) === 'true';
   }
 
   async handleClick() {
     try {
-      showLoading()
+      showLoading();
       if (this._archived) {
-        // Jika catatan sudah diarsipkan, unarchive
         const response = await unArchivedApi(this._id);
         responseMessage(response.message);
       } else {
-        // Jika catatan belum diarsipkan, archive
         const response = await archivedNoteApi(this._id);
         responseMessage(response.message);
       }
 
-      // Toggle state
       this._archived = !this._archived;
-      this.setAttribute('archived', this._archived); 
+      this.setAttribute('archived', this._archived);
 
-      this.render(); 
+      this.render();
     } catch (error) {
       responseMessage(error.message || 'Terjadi kesalahan.');
     } finally {
-      hideLoading()
+      hideLoading();
     }
   }
 

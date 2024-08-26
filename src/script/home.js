@@ -1,4 +1,10 @@
-import { createNote, getNotes, showLoading, hideLoading, getArchived } from './view/notes';
+import {
+  createNote,
+  getNotes,
+  showLoading,
+  hideLoading,
+  getArchived,
+} from './view/notes';
 
 document.addEventListener('DOMContentLoaded', () => {
   showLoading();
@@ -6,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputBodyNote = document.querySelector('#body');
   const formCreate = document.querySelector('#is-form');
 
-  formCreate.addEventListener('submit', function(event) {
+  formCreate.addEventListener('submit', function (event) {
     event.preventDefault();
     const note = {
       title: inputTitleNote.value,
@@ -24,25 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const archived = document.querySelector('#archived')
-const nonArchived = document.querySelector('#non-archived')
+const archived = document.querySelector('#archived');
+const nonArchived = document.querySelector('#non-archived');
 
-archived.addEventListener('click', function(event) {
-  event.preventDefault()
+archived.addEventListener('click', function (event) {
+  event.preventDefault();
 
-  showLoading()
+  showLoading();
   getArchived();
-  setTimeout(function() {
-    hideLoading()
-  }, 500)
-})
+  setTimeout(function () {
+    hideLoading();
+  }, 500);
+});
 
-nonArchived.addEventListener('click', function(event) {
-  event.preventDefault()
+nonArchived.addEventListener('click', function (event) {
+  event.preventDefault();
 
-  showLoading()
-  getNotes()
-  setTimeout(function() {
-    hideLoading()
-  }, 500)
-})
+  showLoading();
+  getNotes();
+  setTimeout(function () {
+    hideLoading();
+  }, 500);
+});
